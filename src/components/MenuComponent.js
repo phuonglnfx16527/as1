@@ -6,22 +6,21 @@ class MenuComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedDish: null
+      selectedStaff: null
     }
   }
 
-  onDishSelect(dish) {
-    this.setState({ selectedDish: dish });
+  onStaffSelect(staff) {
+    this.setState({ selectedStaff: staff });
   }
 
-  renderDish(dish) {
-    if (dish != null)
+  renderStaff(staff) {
+    if (staff != null)
       return (
         <Card>
-          <CardImg top src={dish.image} alt={dish.name} />
           <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
-            <CardText>{dish.description}</CardText>
+            <CardTitle>{staff.name}</CardTitle>
+            <CardText>{staff.description}</CardText>
           </CardBody>
         </Card>
       );
@@ -32,15 +31,12 @@ class MenuComponent extends Component {
   }
 
   render() {
-    const menu = this.props.dishes.map((dish) => {
+    const menu = this.props.staffs.map((staff) => {
       return (
-        <div className="col-12 col-md-5 m-1" key={dish.id}>
-          <Card key={dish.id}
-            onClick={() => this.onDishSelect(dish)}>
-            <CardImg width="100%" src={dish.image} alt={dish.name} />
-            <CardImgOverlay>
-              <CardTitle>{dish.name}</CardTitle>
-            </CardImgOverlay>
+        <div className="col-12 col-md-5 m-1" key={staff.id}>
+          <Card key={staff.id}
+            onClick={() => this.onStaffSelect(staff)}>
+            <CardTitle>{staff.name}</CardTitle>
           </Card>
         </div>
       );
@@ -53,7 +49,7 @@ class MenuComponent extends Component {
         </div>
         <div className="row">
           <div className="col-12 col-md-5 m-1">
-            {this.renderDish(this.state.selectedDish)}
+            {this.renderStaff(this.state.selectedStaff)}
           </div>
         </div>
       </div>
