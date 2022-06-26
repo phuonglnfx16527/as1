@@ -17,7 +17,7 @@ class App extends Component {
       <div className="App">
         <Navbar dark color="primary">
           <div className="container">
-            <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
+            <NavbarBrand href="/">Ung dung quan ly nhan su 1.0v</NavbarBrand>
           </div>
         </Navbar>
         <MenuComponent staffs={this.state.staffs} />
