@@ -1,4 +1,4 @@
-export const DEPARTMENTS =
+const DEPARTMENTS =
     [
         {
             id: "Dept01",
